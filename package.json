@@ -2,7 +2,7 @@
   "name": "ember-cli-plyr",
   "version": "0.1.0",
   "description": "Plyr - HTML5 Video/Audio for Ember.",
-  "author": "Louis R <@louisrudner>",
+  "author": "Louis Rudner <louisrudner@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
