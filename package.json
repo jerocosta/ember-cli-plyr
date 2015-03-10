@@ -1,7 +1,8 @@
 {
   "name": "ember-cli-plyr",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.1.0",
+  "description": "Plyr - HTML5 Video/Audio for Ember.",
+  "author": "Louis R <@louisrudner>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -15,7 +16,6 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.0",
@@ -35,7 +35,10 @@
     "glob": "^4.0.5"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "plyr",
+    "video",
+    "audio"
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"

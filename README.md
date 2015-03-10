@@ -1,25 +1,40 @@
-# Ember-cli-plyr
+# ember-cli-plyr
 
-This README outlines the details of collaborating on this Ember addon.
+This `ember-cli` addon is the fastest way to add the Plyr.js HTML5 media component to your Ember projects.
 
-## Installation
+[![Image of Plyr](https://cdn.plyr.io/static/plyr.png?1)](http://plyr.io)
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+##Installation
 
-## Running
+```sh
+ember addon:install ember-cli-plyr
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+##Usage
 
-## Running Tests
+####Video
+```handlebars
+{{video-plyr 
+  mp4="//cdn.selz.com/plyr/1.0/movie.mp4" 
+  webm="//cdn.selz.com/plyr/1.0/movie.webm" 
+  poster="//cdn.selz.com/plyr/1.0/poster.jpg" 
+  captions="//cdn.selz.com/plyr/1.0/movie_captions_en.vtt"
+}}
 
-* `ember test`
-* `ember test --server`
+```
+####Audio
+```handlebars
+{{audio-plyr 
+  mp3="//cdn.selz.com/plyr/1.0/logistics-96-sample.mp3"
+  ogg="//cdn.selz.com/plyr/1.0/logistics-96-sample.ogg"
+}}
 
-## Building
+```
 
-* `ember build`
+-
+#### Credits
+- [The original js component.](https://github.com/Selz/plyr)
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+
+#### Copyright and License
+[The MIT license](license.md).
