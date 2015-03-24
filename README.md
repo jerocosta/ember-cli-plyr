@@ -4,15 +4,15 @@ This `ember-cli` addon is the fastest way to add the Plyr.js HTML5 media compone
 
 [![Image of Plyr](https://cdn.plyr.io/static/plyr.png?1)](http://plyr.io)
 
-##Installation
+## Installation
 
 ```sh
 ember addon:install ember-cli-plyr
 ```
 
-##Usage
+## Usage
 
-####Video
+#### Video
 ```handlebars
 {{video-plyr 
   mp4="//cdn.selz.com/plyr/1.0/movie.mp4" 
@@ -22,7 +22,7 @@ ember addon:install ember-cli-plyr
 }}
 
 ```
-####Audio
+#### Audio
 ```handlebars
 {{audio-plyr 
   mp3="//cdn.selz.com/plyr/1.0/logistics-96-sample.mp3"
