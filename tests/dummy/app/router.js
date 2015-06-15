@@ -6,6 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('audio', { path: '/'});
+  this.route('video');
 });
 
 export default Router;
