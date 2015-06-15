@@ -1,6 +1,8 @@
 import Ember from 'ember';
 // import config from '../config/environment';
 
+const { computed, Logger, on } = Ember;
+
 export default Ember.Component.extend({
   tagName:    'div',
   classNames: 'player',
@@ -11,14 +13,21 @@ export default Ember.Component.extend({
   poster:     "",
   mp3:        "",
   ogg:        "",
+  options:    null,
+  plyrObject: null,
 
-  setupPlyr: function() {
-    plyr.setup();
-  }.on('didInsertElement'),
+  setupPlyr: on('didInsertElement', function() {
+    const options = this.get('options');
+    if (options !== null) {
+      plyr.setup(options);
+    } else {
+      plyr.setup();
+    }
+    this.set('plyrObject', this.element.plyr);
+    Logger.debug('plyrObject ? ', this.get('plyrObject'));
+  }),
 
-  teardownPlyr: function() {
+  teardownPlyr: on('willDestroyElement', function() {
     this.get('ember-plyr').destroy();
-  }.on('willDestroyElement'),
+  })
 });
-
-
