@@ -25,8 +25,7 @@ export default Ember.Component.extend({
       plyr.setup();
     }
     this.set('plyrObject', this.element.plyr);
-
-    if (this.get('evented')) {
+    if (this.get('evented') && this.get('plyrObject')) {
       const media = this.get('plyrObject').media;
 
       this.$(media).on('abort', (e) => {
@@ -81,13 +80,15 @@ export default Ember.Component.extend({
 
   teardownPlyr: on('willDestroyElement', function() {
     const plyrObject = this.get('plyrObject');
-    const media = plyrObject.media;
-    
-    this.$(media).off('abort loadstart progress suspend error emptied stalled ' +
-      'loadedmetadata loadeddata canplay canplaythrough playing waiting ' +
-      'seeking seeked ended durationchange timeupdate play pause ' +
-      'ratechange resize volumechange');
+    if (plyrObject) {
+      const media = plyrObject.media;
+      
+      this.$(media).off('abort loadstart progress suspend error emptied stalled ' +
+        'loadedmetadata loadeddata canplay canplaythrough playing waiting ' +
+        'seeking seeked ended durationchange timeupdate play pause ' +
+        'ratechange resize volumechange');
 
-    plyrObject.destroy();
+      plyrObject.destroy();
+    }
   })
 });
