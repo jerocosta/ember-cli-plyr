@@ -16,11 +16,6 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    },
-    contentSecurityPolicyHeader: 'Content-Security-Policy',
-    contentSecurityPolicy: {
-      'media-src': "'self' https://cdn.selz.com/",
-      'script-src': "'self' 'sha256-LidP0FwxNWoGpDvn5Kux729VR5fuNRlW1M0HY5VJCfY='"
     }
   };
 

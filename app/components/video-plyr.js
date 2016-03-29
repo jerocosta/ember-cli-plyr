@@ -1,4 +1,5 @@
-import Ember from 'ember';
-import videoPlyr from 'ember-cli-plyr/components/plyr';
-
-export default videoPlyr;
+import plyr from 'ember-cli-plyr/components/plyr-element';
+import layout from 'ember-cli-plyr/templates/components/video-plyr';
+export default plyr.extend({
+  layout
+});

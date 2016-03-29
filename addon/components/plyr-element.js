@@ -1,11 +1,8 @@
 import Ember from 'ember';
-// import config from '../config/environment';
-
-const { on } = Ember;
 
 export default Ember.Component.extend({
   tagName:    'div',
-  classNames: 'player',
+  classNames: 'plyr',
   // Formats
   mp4:        "",
   webm:       "",
@@ -13,18 +10,22 @@ export default Ember.Component.extend({
   poster:     "",
   mp3:        "",
   ogg:        "",
+  video_id:   "",
   options:    null,
   plyrObject: null,
   evented:    true,
-
-  setupPlyr: on('didInsertElement', function() {
+  didInsertElement() {
+    this._super(...arguments);
+    // this.$().attr('contenteditable', true);
     const options = this.get('options');
     if (options !== null) {
-      plyr.setup(options);
+      plyr.setup(this, options);
     } else {
-      plyr.setup();
+      plyr.setup(this);
     }
+    // plyr.setup();
     this.set('plyrObject', this.element.plyr);
+
     if (this.get('evented') && this.get('plyrObject')) {
       const media = this.get('plyrObject').media;
 
@@ -76,13 +77,12 @@ export default Ember.Component.extend({
         this.sendAction('volumechange', e);
       });
     }
-  }),
-
-  teardownPlyr: on('willDestroyElement', function() {
+  },
+  willDestroyElement() {
     const plyrObject = this.get('plyrObject');
     if (plyrObject) {
       const media = plyrObject.media;
-      
+
       this.$(media).off('abort loadstart progress suspend error emptied stalled ' +
         'loadedmetadata loadeddata canplay canplaythrough playing waiting ' +
         'seeking seeked ended durationchange timeupdate play pause ' +
@@ -90,5 +90,5 @@ export default Ember.Component.extend({
 
       plyrObject.destroy();
     }
-  })
+  }
 });

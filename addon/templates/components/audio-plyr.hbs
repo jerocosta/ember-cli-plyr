@@ -1,4 +1,3 @@
-{{!-- Plyr Audio Component - Handlebars Template --}}
 <audio controls crossorigin>
 
   <!-- Audio file types -->
@@ -11,7 +10,7 @@
   {{#if ogg}}
   <source src={{unbound ogg}} type="audio/ogg">
   {{/if}}
-  
+
   <!-- Fallback for browsers that don't support the <audio> element -->
   <div>
       <a href={{unbound mp3}}>Download</a>
