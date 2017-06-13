@@ -25,7 +25,6 @@ module.exports = {
   included: function(app) {
     this._super.included(app);
 
-    app.import(app.bowerDirectory + '/plyr/dist/plyr.js');
     app.import(app.bowerDirectory + '/plyr/dist/plyr.css');
     app.import(app.bowerDirectory + '/plyr/dist/sprite.svg', { destDir: 'sprites' });
   },
